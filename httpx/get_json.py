@@ -8,6 +8,7 @@ def get_json(url: str) -> dict | list | None:
         return response.json()
     except httpx.RequestError as exc:
         print(f'An error occurred while requesting {exc.request.url!r}.')
+        raise
     except httpx.HTTPStatusError as exc:
         print(f'Error response {exc.response.status_code} while requesting {exc.request.url!r}.')
         raise exc

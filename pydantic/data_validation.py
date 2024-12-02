@@ -16,7 +16,7 @@ try:
     basket = Basket(
         fruits=[
             Fruit(name='apple', color='green', weight=0.2),
-            Fruit(name='banana', color='yellow', weight='one')
+            Fruit(name='banana', color='yellow', weight=0.4)
         ]
     )
 
