@@ -11,5 +11,3 @@ def test_my_output(capsys):
     captured = capsys.readouterr()
     assert captured.out == 'Hello\n'
     assert captured.err == 'World\n'
-
-

@@ -8,7 +8,7 @@ class Fruit(BaseModel):
     weight: float
 
     @field_validator('weight')
-    def weight_is_positive(cls, v):
+    def weight_is_positive(cls, v: float) -> float:
         if v <= 0:
             raise ValueError('Вес должен быть положительным')
         return v
@@ -20,7 +20,7 @@ class Basket(BaseModel):
 
 try:
     basket = Basket(
-        fruits = [
+        fruits=[
             Fruit(name='apple', color='green', weight=0.2),
             Fruit(name='banana', color='yellow', weight=-6)
         ]

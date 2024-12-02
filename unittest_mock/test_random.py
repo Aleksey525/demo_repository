@@ -2,11 +2,11 @@ import random
 from unittest.mock import patch
 
 
-def my_random_function():
+def my_random_function() -> int:
     return random.randint(1, 100)
 
 
-def test_my_random_function():
+def test_my_random_function() -> None:
     with patch('random.randint', return_value=55) as mock_randint:
         result = my_random_function()
         assert result == 55

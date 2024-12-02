@@ -14,7 +14,7 @@ class Basket(BaseModel):
 
 try:
     basket = Basket(
-        fruits = [
+        fruits=[
             Fruit(name='apple', color='green', weight=0.2),
             Fruit(name='banana', color='yellow', weight='one')
         ]
@@ -24,5 +24,3 @@ try:
 
 except ValidationError as error:
     print(error)
-
-

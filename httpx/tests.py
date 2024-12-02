@@ -78,4 +78,3 @@ def test_post_json_status_error(httpx_mock: HTTPXMock) -> None:
     with pytest.raises(httpx.HTTPStatusError) as exception_info:
         post_json(url, json_data)
     assert exception_info.value.response.status_code == 404
-
