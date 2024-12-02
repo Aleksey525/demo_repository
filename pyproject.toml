@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "demo_repository"
+version = "1.0.0"
+description = "project to prepare for an internship"
+authors = ["Alex <aleksey.tolchin2016@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11.3"
+pydantic = "2.10.2"
+pydantic-settings = "2.6.1"
+pytest = "8.3.3"
+pytest-httpx = "0.35.0"
+httpx = "0.28.0"
