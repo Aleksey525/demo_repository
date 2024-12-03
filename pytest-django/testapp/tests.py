@@ -7,12 +7,15 @@ import pytest
 class TestUser:
 
     def test_create_user(self) -> None:
-        user = User.objects.create_user('test_user', 'test@test.com', 'test_password')
+        name = 'test_user'
+        email = 'test@test.com'
+        password = 'test_password'
+        user = User.objects.create_user(name, email, password)
         user.save()
 
-        assert User.objects.filter(username='test_user').exists()
-        assert User.objects.get(username='test_user').email == 'test@test.com'
-        assert User.objects.get(username='test_user').check_password('test_password') is True
+        assert User.objects.filter(username=name).exists()
+        assert User.objects.get(username=name).email == email
+        assert User.objects.get(username=name).check_password(password) is True
 
     def test_check_user_exclusion(self) -> None:
         with pytest.raises(User.DoesNotExist, match=r'User matching query does not exist'):
